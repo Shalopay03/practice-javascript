@@ -33,12 +33,13 @@ firstTask.addEventListener('click', () => {
 
     //checking whether user entered number
     if(isNaN(lim1) || isNaN(lim1) || lim1>lim2){
-        alert("Wrong input. Try again.");
+        console.log("Wrong input. Try again.");
         return;
     }
-
-    alert(`for loop implementation: ${forLoopImplementation(lim1, lim2)}`);
-    alert(`while loop implementation: ${whileLoopImplementation(lim1, lim2)}`);
+    
+    console.log("Task 1:");
+    console.log(`for loop implementation: ${forLoopImplementation(lim1, lim2)}`);
+    console.log(`while loop implementation: ${whileLoopImplementation(lim1, lim2)}`);
 });
 
 ///////////////////////////////////////////////
@@ -54,10 +55,64 @@ secondTask.addEventListener('click', () => {
 
     //checking whether user entered number
     if(isNaN(firstNumber) || isNaN(secondNumber)){
-        alert("Wrong input. Try again.");
+        console.log("Wrong input. Try again.");
         return;
     }
 
-    let productArrowFunction = (a, b) => alert(a*b);
+    let productArrowFunction = (a, b) => console.log(`${a}*${b}=${a*b}`);
+    console.log("Task 2:");
     productArrowFunction(firstNumber, secondNumber);    
+});
+
+
+///////////////////////////////////////////////
+
+/*Масив одновимірний
+3.1 Створити числовий масив та проініціалізувати його.
+3.2. Вивести розмір масива
+3.3. Вивести елементи з парними індексами
+3.4. Вивести тільки парні елементи
+3.5. Вивести індекси нульових елементів (елемент дорівнює нулю)
+3.6. Обчислити кількість нульових елементів*/
+
+
+//3.1 Створити числовий масив та проініціалізувати його.
+let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10, 0];
+
+const thirdTask=document.querySelector("#third-task");
+thirdTask.addEventListener('click', () => {
+    console.log("Task 3:");
+
+    //array output
+    console.log(`Array: ${array}`);
+
+    //3.2. Вивести розмір масива
+    console.log(`Array length: ${array.length}`);
+
+    //3.3. Вивести елементи з парними індексами
+    console.log("Elements with even index:");
+    for(let i=0; i < array.length; i+=2){
+        console.log(array[i]);
+    }
+
+    //3.4. Вивести тільки парні елементи
+    console.log("Even elements:");
+    array.forEach(element => { 
+        if(element%2===0) console.log(element);
+    });
+
+    //3.5. Вивести індекси нульових елементів (елемент дорівнює нулю)
+    //3.6. Обчислити кількість нульових елементів
+    let numberOfZeroElements=0;
+    console.log("Indexes of elements that equal zero:");
+    for(let i=0; i < array.length; i++){
+        if(array[i]===0) 
+        {
+            numberOfZeroElements++;
+            console.log(i);
+        }
+    }
+    console.log(`Number of elements that equal zero: ${numberOfZeroElements}`);
+
+    
 });
