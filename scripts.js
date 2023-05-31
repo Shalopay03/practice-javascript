@@ -97,9 +97,7 @@ thirdTask.addEventListener('click', () => {
 
     //3.4. Вивести тільки парні елементи
     console.log("Even elements:");
-    array.forEach(element => { 
-        if(element%2===0) console.log(element);
-    });
+    console.log(array.filter(element => element%2===0));
 
     //3.5. Вивести індекси нульових елементів (елемент дорівнює нулю)
     //3.6. Обчислити кількість нульових елементів
