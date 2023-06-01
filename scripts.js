@@ -111,6 +111,69 @@ thirdTask.addEventListener('click', () => {
         }
     }
     console.log(`Number of elements that equal zero: ${numberOfZeroElements}`);
+    });
+
+    ////////////////////////////////////////////////////
+
+
+    /*4. Створити об’єкт Машина та визначити для нього властивості.
+    5. Створити функції-конструктори: Книжка (автор, назва, рік видання, видавництво)
+    Електронна версія книжки (автор, назва, рік видавництва, видавництво, формат,
+        електронний номер). 
+        5.1. Переробити створення функцій без дублювання інформації, реалізувавши
+        прототипне наслідування.
+    5.2. Вивести об’єкти в консоль*/
+
+    const fourthTask=document.querySelector("#fourth-task");
+    fourthTask.addEventListener('click', () => {
+
+    //4. Створити об’єкт Машина та визначити для нього властивості.
+    let car = {
+        make: "Dodge",
+        model: "Challenger",
+        owner: "Vasya Pupkin",
+        year: 2013,
+        color: "grey",
+        engineCapacityLiters: 3.6,
+        maxSpeedKMPH: 293,
+        kilometersDriven: 124000,
+    }
+    
+
+    //5. Створити функції-конструктори: Книжка (автор, назва, рік видання, видавництво)
+    function Book(author, name, year, publisher){
+        this.author=author;
+        this.name=name;
+        this.year=year;
+        this.publisher=publisher;
+    }
+
+    let myBook= new Book("Bjarne Strounstrup", "Programming c++", 2018,
+     "Addison Wesley");
+    
+
+    /*Електронна версія книжки (автор, назва, рік видавництва, видавництво, формат,
+        електронний номер). 
+        5.1. Переробити створення функцій без дублювання інформації, реалізувавши
+        прототипне наслідування.*/
+    function EBook(author, name, year, publisher, format, ENumber){
+        Book.call(this, author, name, year, publisher);
+        this.format=format;
+        this.ENumber=ENumber;        
+    }
+
+    let myEBook= new EBook("Steven King", "The Jaunt", 1981,
+     "Some random publisher", "pdf", "123457");
+    
+
+    //5.2. Вивести об’єкти в консоль
+    console.log(car);
+    console.log(myBook);
+    console.log(myEBook);
+    
+    });
+
+
+
 
     
-});
