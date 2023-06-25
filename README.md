@@ -18,4 +18,4 @@ Electronic version of the book (author, title, year of publication, publisher, f
 5.1. Rework the creation of functions without duplicating information by implementing prototypical imitation.
 5.2. Output objects to the console
 
-Live page: https://shalopay03.github.io/practice-javascript/
+Live page: https://shalodev.github.io/practice-javascript/
